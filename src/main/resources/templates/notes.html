@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Notes</title>
+</head>
+<body>
+<h2>Notes</h2>
+<a th:href="@{/note/new}">Create new note</a>
+<table>
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Content</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="note : ${notes}">
+            <td th:text="${note.title}"></td>
+            <td th:text="${note.content}"></td>
+            <td>
+                <a th:href="@{/note/delete/{id}(id=${note.id})}">Delete</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</body>
+</html>

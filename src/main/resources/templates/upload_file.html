@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Upload File</title>
+</head>
+<body>
+<h2>Upload File</h2>
+<form th:action="@{/files/upload}" method="post" enctype="multipart/form-data">
+    <div>
+        <label for="file">File:</label>
+        <input type="file" id="file" name="file" required />
+    </div>
+    <div>
+        <label for="noteId">Note ID:</label>
+        <input type="text" id="noteId" name="noteId" required />
+    </div>
+    <div>
+        <button type="submit">Upload</button>
+    </div>
+</form>
+</body>
+</html>

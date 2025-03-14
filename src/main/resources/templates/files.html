@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Files</title>
+</head>
+<body>
+<h2>Files</h2>
+<a th:href="@{/files/upload}">Upload new file</a>
+<table>
+    <thead>
+        <tr>
+            <th>File Name</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="file : ${files}">
+            <td th:text="${file.fileName}"></td>
+            <td>
+                <a th:href="@{/files/download/{filename}(filename=${file.fileName})}">Download</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</body>
+</html>
